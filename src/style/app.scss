@@ -1,0 +1,18 @@
+@import "./vars";
+@import "./mixins";
+@import "./header";
+@import './main';
+@import "./contacts";
+
+.app{
+    display: grid;
+    min-height: 100vh;
+    background-color: $main-bg-color;
+    grid-template: 1fr/1fr minmax(auto,$display-size) 1fr;
+    &__wrapper{
+        grid-column: 2/3;
+        padding: 10px;
+        @extend %flex;
+        flex-direction: column;
+    }
+}

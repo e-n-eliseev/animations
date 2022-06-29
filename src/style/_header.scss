@@ -1,0 +1,18 @@
+.header,.contacts{
+    color: $main-text-color;
+    &__heading {
+        font-size: $heading-size;
+    }
+
+}
+
+.header {
+    min-height: 50px;
+    display: grid;
+    text-align: center;
+    @include text-shadow(2px,2px,20px,$basic-shadow-color);
+    &__text {
+        margin: 15px 0;
+        font-size: $heading-size * 0.75;
+    }
+}
