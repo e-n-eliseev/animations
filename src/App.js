@@ -7,6 +7,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import PageNotFound from "./components/404/PageNotFound";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
         <div className="app__wrapper">
           <Header />
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main />} >
+              <Route path="/page:id" element={<Main />} />
+            </Route>
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
           <Contacts />
         </div>

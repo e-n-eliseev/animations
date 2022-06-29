@@ -1,6 +1,7 @@
 .header,
 .contacts,
-.main {
+.main,
+.notFound {
     text-align: center;
     color: $main-text-color;
     &__heading {
@@ -11,7 +12,8 @@
 }
 
 .header,
-.main {
+.main,
+.notFound {
     &__text {
         margin: 15px 0;
         font-size: $heading-size * 0.7;
