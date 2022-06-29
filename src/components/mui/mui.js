@@ -14,19 +14,44 @@ export const theme = createTheme({
             styleOverrides: {
                 root: {
                     "&::-webkit-scrollbar": {
-                        width: 18,
+                        width: 10,
                     },
                     "&::-webkit-scrollbar-track": {
                         backgroundColor: "#445d5b50",
-                        borderRadius: "0 4px 4px 0"
+                        borderRadius: "0 4px 4px 0",
                     },
                     "&::-webkit-scrollbar-thumb": {
                         backgroundColor: "#f8d862",
-                        borderRadius: "0 4px 4px 0"
-                    }
+                        borderRadius: "4px",
+                    },
+                    boxShadow: "0 0 15px #FFFFFF"
 
                 }
             },
-        }
+        },
+        MuiPagination: {
+            styleOverrides: {
+                root: {
+                    color: "#f8d862",
+                    maxWidth: "330px",
+                    margin: "20px 0 0"
+                },
+                outlined: {
+                    color: "#f8d862",
+                },
+            }
+        },
+        MuiPaginationItem: {
+            styleOverrides: {
+                page: {
+                    color: "#f8d862",
+                    fontWeight: "700",
+                },
+                icon: {
+                    color: "#f8d862",
+                    fontWeight: "700",
+                },
+            }
+        },
     }
 });

@@ -1,3 +1,12 @@
 .main{
     flex-grow: 1;
+    padding: 20px 0;
+    @extend %flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &__wrapper{
+        @extend %flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
 }

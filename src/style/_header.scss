@@ -1,18 +1,25 @@
-.header,.contacts{
+.header,
+.contacts,
+.main {
+    text-align: center;
     color: $main-text-color;
     &__heading {
+        @include text-shadow(2px, 2px, 15px, $basic-shadow-color);
         font-size: $heading-size;
     }
 
 }
 
+.header,
+.main {
+    &__text {
+        margin: 15px 0;
+        font-size: $heading-size * 0.7;
+    }
+}
+
+
 .header {
     min-height: 50px;
     display: grid;
-    text-align: center;
-    @include text-shadow(2px,2px,20px,$basic-shadow-color);
-    &__text {
-        margin: 15px 0;
-        font-size: $heading-size * 0.75;
-    }
 }

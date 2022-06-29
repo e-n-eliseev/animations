@@ -1,0 +1,9 @@
+.project{
+    width: $project-item-size;
+    min-height: $project-item-size - 100;
+    padding: 10px;
+    background-color: $project-bg-color;
+    border-radius: $heading-size / 4;
+    @include box-shadow(0px , 1px, 10px,$basic-shadow-color);
+    margin: 20px;
+}

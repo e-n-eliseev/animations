@@ -21,8 +21,9 @@ const NavMenu = () => {
     return (
         <span className='header__menu'>
             <Fab
-                id="basic-button"
+                id="menu-button"
                 aria-controls={open ? 'basic-menu' : undefined}
+                aria-label="menu-button"
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
@@ -40,10 +41,11 @@ const NavMenu = () => {
                 }}
                 PaperProps={{
                     style: {
-                        maxHeight: 300,
-                        minWidth: '40ch',
+                        maxHeight: 200,
+                        width: '20ch',
                     },
                 }}
+
             >
                 {works.map(item => <Item key={uniqid()} handleClose={handleClose} item={item} />)
                 }
