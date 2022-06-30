@@ -10,6 +10,7 @@ import {
 import PageNotFound from "./components/404/PageNotFound";
 import { lazy, Suspense } from "react";
 const Parallax = lazy(() => import("./components/parallax/Parallax"));
+const BgPicAnimation = lazy(() => import("./components/bgpicanimation/BgPicAnimation"));
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/page:id" element={<Main />} />
               </Route>
               <Route path="/parallax" element={<Parallax />} />
+              <Route path="/backgroundpictureanimation" element={<BgPicAnimation />} />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </Suspense>
