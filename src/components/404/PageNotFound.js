@@ -22,7 +22,7 @@ const PageNotFound = () => {
                     <p>
                         Через 5 секунд вы будете переведены на главную страницу или можете на жать на ссылку ниже
                     </p>
-                    <Link to="/1"><HomeIcon fontSize="large" color="primary" /></Link>
+                    <Link to="/"><HomeIcon fontSize="large" color="primary" /></Link>
                 </figcaption>
             </figure>
         </article>

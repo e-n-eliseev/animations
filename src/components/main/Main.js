@@ -13,11 +13,14 @@ const Main = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    const currentPage = +location.pathname.slice(5);
+
     useEffect(() => {
-        if (!+location.pathname.slice(5) || +location.pathname.slice(5) > pages) navigate(`/page1`);
+        if (!currentPage || currentPage > pages) navigate(`/page1`);
     }, [location.pathname])
 
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(currentPage ? currentPage : 1);
+
     const handleChange = (event, value) => {
         setPage(value);
         navigate(`/page${value}`)

@@ -19,8 +19,8 @@ const ModalWindow = ({ item }) => {
         <>
             <Button variant="outlined" onClick={handleOpen}>Подробнее...</Button>
             <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
+                aria-labelledby="Пример стилизации"
+                aria-describedby="Подпробное описание стилизации компонента и используемых технологий"
                 open={open}
                 onClose={handleClose}
                 closeAfterTransition
@@ -31,17 +31,13 @@ const ModalWindow = ({ item }) => {
             >
                 <Fade in={open}>
                     <Box sx={{ ...flex, ...modal }} >
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
+                        <Typography id="transition-modal-title" variant="h6" component="h2" >
                             {item[0]}
                         </Typography>
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                            {item[6]}
+                            {item[1]}
                         </Typography>
-                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                            Разработано для браузеров: {item[4]}
-                        </Typography>
-                        <Button variant="outlined" href={item[2]}>Посетить сайт</Button>
-                        <Button variant="outlined" href={item[3]}>Посетить GitHub проекта</Button>
+                        <Button variant="outlined" href={item[2]}>Демо</Button>
                     </Box>
                 </Fade>
             </Modal>
