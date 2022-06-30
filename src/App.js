@@ -1,17 +1,18 @@
+import "./style/app.scss";
 import Contacts from "./components/contacts/Contacts";
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
-import "./style/app.scss";
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-import PageNotFound from "./components/404/PageNotFound";
 import { lazy, Suspense } from "react";
-import TextStyles from "./components/textStyles/TextStyles";
+const TypeWriter = lazy(() => import("./components/typeWriter/TypeWriter"));
+const TextStyles = lazy(() => import("./components/textStyles/TextStyles"));
 const Parallax = lazy(() => import("./components/parallax/Parallax"));
 const BgPicAnimation = lazy(() => import("./components/bgpicanimation/BgPicAnimation"));
+const PageNotFound = lazy(() => import("./components/404/PageNotFound"));
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/parallax" element={<Parallax />} />
               <Route path="/backgroundpictureanimation" element={<BgPicAnimation />} />
               <Route path="/textstyle" element={<TextStyles />} />
+              <Route path="/typewriter" element={<TypeWriter />} />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </Suspense>

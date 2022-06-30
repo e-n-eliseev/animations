@@ -2,11 +2,11 @@ import { works } from "../../works";
 import Project from "./project/Project";
 import uniqid from "uniqid";
 import Pagination from '@mui/material/Pagination';
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 
 
-const Main = () => {
+const Main = memo(() => {
 
     const pages = Math.ceil(works.length / 9);
 
@@ -17,7 +17,7 @@ const Main = () => {
 
     useEffect(() => {
         if (!currentPage || currentPage > pages) navigate(`/page1`);
-    }, [location.pathname])
+    }, [])
 
     const [page, setPage] = useState(currentPage ? currentPage : 1);
 
@@ -40,6 +40,6 @@ const Main = () => {
 
         </main>
     )
-}
+})
 
 export default Main;

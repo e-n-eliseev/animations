@@ -1,0 +1,103 @@
+.type-writer {
+    @extend %grow;
+
+    &__text,
+    &__heading,
+    &__list {
+        color: $main-text-color;
+        font-size: 30px;
+    }
+
+    &__heading {
+        border-right: 4px solid $main-text-color;
+        animation: cursor 1s infinite step-end, typing-text 15s infinite steps(48);
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    &__wrapper{
+        display: inline-flex;
+    }
+    &__list{
+        overflow: hidden;
+        margin: 0 0 0 10px;
+        height: 40px;
+        line-height: 40px;
+        text-align: left;
+    }
+    &__list li {
+        position: relative;
+        top: 0;
+        animation: slide 4.5s steps(3) infinite;
+        & span {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                border-left: 4px solid $main-text-color;
+                background: $main-bg-color;
+                animation: cursor 1s infinite step-end, typing-list 1.5s steps(9) infinite;
+            }
+        }
+    }
+}
+
+@keyframes cursor {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: $main-text-color;
+    }
+}
+
+@keyframes typing-text {
+    0% {
+        width: 0ch
+    }
+
+    30% {
+        width: 48ch;
+    }
+
+    80% {
+        width: 48ch;
+    }
+
+    90% {
+        width: 0ch;
+    }
+
+    100% {
+        width: 0ch;
+    }
+}
+
+@keyframes cursor {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: $main-text-color;
+    }
+}
+
+@keyframes typing-list {
+    100% {
+        left: 9ch;
+    }
+}
+
+@keyframes slide {
+    100% {
+        top: -120px;
+    }
+}

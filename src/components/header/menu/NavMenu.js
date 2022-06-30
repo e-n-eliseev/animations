@@ -18,7 +18,6 @@ const NavMenu = () => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = (path) => {
-        console.log(path)
         setAnchorEl(null);
         navigate(path);
     };
@@ -47,7 +46,7 @@ const NavMenu = () => {
                 PaperProps={{
                     style: {
                         maxHeight: 200,
-                        width: '20ch',
+                        width: '30ch',
                     },
                 }}
 

@@ -1,6 +1,5 @@
 .text-style {
-    flex-grow: 1;
-    text-align: center;
+    @extend %grow;
     &__animation,
     &__text {
         @extend %clip;

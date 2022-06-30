@@ -11,7 +11,7 @@ const Project = memo(({ item }) => {
             duration: 2000
         });
     }, []);
-
+    console.log("sdfksdf")
     return (
         <section className="project" data-aos="flip-left" >
             <h3 className="project__heading">{item[0]}</h3>
