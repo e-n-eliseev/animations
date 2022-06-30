@@ -8,6 +8,8 @@ import {
   Route,
 } from "react-router-dom";
 import PageNotFound from "./components/404/PageNotFound";
+import { lazy, Suspense } from "react";
+const Parallax = lazy(() => import("./components/parallax/Parallax"));
 
 function App() {
   return (
@@ -15,12 +17,17 @@ function App() {
       <div className="app">
         <div className="app__wrapper">
           <Header />
-          <Routes>
-            <Route path="/" element={<Main />} >
-              <Route path="/page:id" element={<Main />} />
-            </Route>
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
+          <Suspense
+            fallback={<h1>Loading profile...</h1>}
+          >
+            <Routes>
+              <Route path="/" element={<Main />} >
+                <Route path="/page:id" element={<Main />} />
+              </Route>
+              <Route path="/parallax" element={<Parallax />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </Suspense>
           <Contacts />
         </div>
       </div>

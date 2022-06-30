@@ -6,10 +6,13 @@ import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
+import { useNavigate } from 'react-router';
 
 const ModalWindow = ({ item }) => {
 
     const { flex, modal } = useTheme();
+
+    const navigate = useNavigate();
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -35,9 +38,9 @@ const ModalWindow = ({ item }) => {
                             {item[0]}
                         </Typography>
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                            {item[1]}
+                            {item[2]}
                         </Typography>
-                        <Button variant="outlined" href={item[2]}>Демо</Button>
+                        <Button variant="outlined" onClick={() => navigate(item[3])}>Демо</Button>
                     </Box>
                 </Fade>
             </Modal>

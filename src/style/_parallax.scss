@@ -1,0 +1,36 @@
+.parallax {
+    flex-grow: 1;
+    @extend %flex;
+    flex-direction: column;
+&__wrapper{
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+    width: 100%;
+    border-radius: $heading-size;
+    margin-top: 25px;
+}
+&__bg1,&__bg2,&__bg3 {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.1s ease;  
+}
+&__bg1{
+    background-image: url("../assets/parallax/bg-1.jpg");
+    width: 115%;
+    height: 115%;
+}
+&__bg2 {
+   background-image: url("../assets/parallax/bg-2.png");
+   height: 125%; 
+   width: 130%;  
+   left: -30%;
+}
+&__bg3 {
+    background-image: url("../assets/parallax/bg-3.png");
+    width: 141%;
+    height: 134%;
+}
+}

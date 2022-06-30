@@ -33,7 +33,7 @@ const Main = () => {
             <p className="main__text" >В данной секции располагаются примеры работ, чтобы открыть описание и перейти на соответствующую страницу нажмите кнопку "подробнее" на карточке элемента.</p>
             <p className="main__text" >Сайт периодически пополняется новыми примерами стилизации.</p>
             <div className="main__wrapper">
-                {works.slice((page - 1) * 9, 9 * page).map(item => <Project key={uniqid()} item={item} />)}
+                {works.slice((page - 1) * 9 + 1, 9 * page).map(item => <Project key={uniqid()} item={item} />)}
             </div>
 
             <Pagination count={pages} page={page} onChange={handleChange} color="primary" size="large" variant="outlined" siblingCount={0} />

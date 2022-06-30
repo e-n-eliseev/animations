@@ -5,8 +5,11 @@ import { works } from '../../../works';
 import Fab from '@mui/material/Fab';
 import uniqid from "uniqid";
 import Item from './menuItem/Item';
+import { useNavigate } from 'react-router';
 
 const NavMenu = () => {
+
+    const navigate = useNavigate();
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -14,8 +17,10 @@ const NavMenu = () => {
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
+    const handleClose = (path) => {
+        console.log(path)
         setAnchorEl(null);
+        navigate(path);
     };
 
     return (
