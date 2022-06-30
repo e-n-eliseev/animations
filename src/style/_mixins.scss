@@ -9,3 +9,10 @@
     align-items: center;
     justify-content: center;
 }
+
+%clip{
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 700;
+}

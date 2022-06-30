@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import PageNotFound from "./components/404/PageNotFound";
 import { lazy, Suspense } from "react";
+import TextStyles from "./components/textStyles/TextStyles";
 const Parallax = lazy(() => import("./components/parallax/Parallax"));
 const BgPicAnimation = lazy(() => import("./components/bgpicanimation/BgPicAnimation"));
 
@@ -27,6 +28,7 @@ function App() {
               </Route>
               <Route path="/parallax" element={<Parallax />} />
               <Route path="/backgroundpictureanimation" element={<BgPicAnimation />} />
+              <Route path="/textstyle" element={<TextStyles />} />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </Suspense>
