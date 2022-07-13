@@ -1,7 +1,7 @@
 import Menu from '@mui/material/Menu';
 import { useState } from 'react';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import { works } from '../../../works';
+import { works } from '../../../assets/works';
 import Fab from '@mui/material/Fab';
 import uniqid from "uniqid";
 import Item from './menuItem/Item';

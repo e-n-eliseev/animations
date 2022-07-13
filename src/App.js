@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
+const PackOfLoaders = lazy(() => import("./components/packOfLoaders/PackOfLoaders"));
 const TypeWriter = lazy(() => import("./components/typeWriter/TypeWriter"));
 const TextStyles = lazy(() => import("./components/textStyles/TextStyles"));
 const Parallax = lazy(() => import("./components/parallax/Parallax"));
@@ -31,6 +32,7 @@ function App() {
               <Route path="/backgroundpictureanimation" element={<BgPicAnimation />} />
               <Route path="/textstyle" element={<TextStyles />} />
               <Route path="/typewriter" element={<TypeWriter />} />
+              <Route path="/packofloaders" element={<PackOfLoaders />} />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </Suspense>

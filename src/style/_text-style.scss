@@ -62,11 +62,49 @@
              1px 20px 30px #f8d86230,
              1px 25px 50px #f8d86220;
         }
+
+    }
+    &__spotlight{
+        position: relative;
+        color: $main-text-color;
+        font-size: 50px;
+        &:before {
+            content: attr(data-text);
+            position: absolute;
+            background: $basic-shadow-color;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-clip: text;
+            background-size: 100% 90%;
+            clip-path: ellipse(60px 60px at -2.54% -9.25%);
+            animation: swing 5s infinite;
+            animation-direction: alternate;
+        }
+    }
+}
+
+@media (max-width:750px){
+    .text-style__spotlight::before{
+        top:0;
+        left: 0;
     }
 }
 
 @keyframes animated-gradient {
     to {
         background-position: 200%;
+    }
+}
+
+@keyframes swing {
+    0%{
+        clip-path: ellipse(60px 60px at -2.54% -9.25%)
+    }
+    50%{
+        clip-path: ellipse(120px 120px at 49.66% 64.36%);
+        
+    }
+    100%{
+        clip-path: ellipse(80px 80px at 102.62% -1.61%)
     }
 }

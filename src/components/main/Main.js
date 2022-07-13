@@ -1,4 +1,4 @@
-import { works } from "../../works";
+import { works } from "../../assets/works";
 import Project from "./project/Project";
 import uniqid from "uniqid";
 import Pagination from '@mui/material/Pagination';

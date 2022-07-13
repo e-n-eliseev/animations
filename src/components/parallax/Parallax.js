@@ -17,7 +17,7 @@ const Parallax = () => {
 
     return (
         <section className="parallax" onMouseMove={handleChange} >
-            <h1 className="parallax__heading"> На странице представлен пример исполнения паралакс эффекта при движении мыши</h1>
+            <h2 className="parallax__heading"> На странице представлен пример исполнения паралакс эффекта при движении мыши</h2>
             <div className="parallax__wrapper">
                 <div ref={bg1} className="parallax__bg1"></div>
                 <div ref={bg2} className="parallax__bg2"></div>
