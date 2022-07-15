@@ -13,7 +13,7 @@ const Main = memo(() => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const currentPage = +location.pathname.slice(5);
+    const currentPage = +location.pathname.slice(4);
 
     useEffect(() => {
         if (!currentPage || currentPage > pages) navigate(`/page1`);
