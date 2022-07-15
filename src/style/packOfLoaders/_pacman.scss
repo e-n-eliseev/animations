@@ -1,0 +1,59 @@
+.pack-of-loaders__pacman {
+    width: 7em;
+    height: 0.75em;
+    background: repeating-radial-gradient($main-text-color, $main-text-color 0.2em, transparent 0.2em, transparent 100%);
+    background-size: 0.8em 0.8em;
+    animation: pac-dots 5s linear infinite;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top:37%;
+        left:15%;
+        border-radius: 50%;
+        border: 1em solid $main-text-color;
+    }
+
+    &:before {
+        border-color: transparent $main-text-color $main-text-color transparent;
+        animation: pac-top 0.5s linear infinite alternate;
+    }
+
+    &:after {
+        border-color: $main-text-color transparent transparent $main-text-color;
+        animation: pac-bot 0.5s linear infinite alternate;
+    }
+}
+
+@keyframes pac-dots {
+    to {
+        background-position: -220% 0;
+    }
+}
+
+@keyframes pac-move {
+    to {
+        width: 1em;
+    }
+}
+
+@keyframes pac-top {
+    from {
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(105deg);
+    }
+}
+
+@keyframes pac-bot {
+    from {
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(-15deg);
+    }
+}

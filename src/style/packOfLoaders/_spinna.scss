@@ -1,0 +1,37 @@
+.pack-of-loaders{
+    &__spinna {
+        width: 5em;
+        height: 5em;
+        border-radius: 90%;
+        overflow: hidden;
+        background-color: $project-bg-color;
+        position: relative;
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius:90%;
+          }
+          &:before {
+            z-index: 1;
+            border: 2px solid #58549250;
+            box-shadow: inset 0 0 20px $heading-size $project-bg-color;
+          }
+          &:after {
+            border-width: 10px;
+            border-style: solid;
+               border-image: linear-gradient(to bottom, $main-text-color-transparent 0%, transparent 100%);
+            border-image-slice: 0 0 0 20;
+                    animation: spinna 1s infinite linear;
+          }
+      }
+}
+      
+@keyframes spinna {
+    to {
+      transform: rotate(359deg);
+    }
+  }

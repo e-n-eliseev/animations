@@ -1,0 +1,46 @@
+.pack-of-loaders {
+    &__cycle-disks {
+        position: relative;
+        width: 8em;
+        height: 4em;
+
+        &:before,
+        &:after {
+            content: "";
+            left: 0;
+            position: absolute;
+            width: 4em;
+            height: 4em;
+            border-radius: 50%;
+            background-color: $main-text-color;
+            animation: movingCircles 2s infinite ease-in-out;
+        }
+
+        &:after {
+            animation-delay: -1s;
+            background-color: $main-text-color+80;
+        }
+    }
+
+    @keyframes movingCircles {
+        0% {
+            z-index: 1;
+            transform: translate(0, 0);
+        }
+
+        50% {
+            z-index: 1;
+            transform: translate(120%, 0);
+        }
+
+        50.1% {
+            z-index: 0;
+            transform: translate(120%, 0);
+        }
+
+        100% {
+            z-index: 0;
+            transform: translate(0, 0);
+        }
+    }
+}

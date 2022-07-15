@@ -1,0 +1,44 @@
+.pack-of-loaders{
+    &__beaker {
+        width: 2em;
+        height: 4em;
+        border-radius: 5%;
+        border: 0.15em solid $main-text-color;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 0 0.02em 0 0.2em $main-bg-color;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            left: -1.5em;
+            top: 100%;
+            width: 6em;
+            height: 6em;
+            background-color: $main-bg-color + 70;
+            border-radius: 66% 100% 100% 66%/50% 150% 100% 150%;
+                    animation: waveRot 15s infinite cubic-bezier(.22,.01,.41,.54);
+          }
+         &:after {
+            content: "          100\a            75\a            50\a            25";
+            white-space: pre;
+            font-size: 0.35em;
+            font-weight: bold;
+            line-height: 2.6;
+            color: $main-text-color;
+            position: absolute;
+            left: 0;
+            top: -0.2em;
+            bottom: 0;
+            right: 50%;
+            mix-blend-mode:plus-lighter;
+            background-image: repeating-linear-gradient(to bottom, $main-text-color 0, $main-text-color 1px, transparent 2px, transparent 22px);
+            background-position-y: 0.38em;
+          }
+      }
+           @keyframes waveRot {
+        to {
+          transform: translateY(-70%) rotate(-1440deg);
+        }
+      }
+}

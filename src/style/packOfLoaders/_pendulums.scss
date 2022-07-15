@@ -1,0 +1,49 @@
+.pack-of-loaders__pendulums,
+.pack-of-loaders__pendulums::before,
+.pack-of-loaders__pendulums::after {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+}
+
+.pack-of-loaders__pendulums {
+    background-image: radial-gradient(circle at center center, $main-text-color 0%, $main-text-color 32.9%, transparent 33%, transparent 100%);
+    border: 0.1em solid $main-text-color-2;
+    position: relative;
+    &:before,
+    &:after {
+        content: "";
+        left: -0.1em;
+        top: -0.1em;
+        position: absolute;
+        border: 0.2em solid;
+        border-color: $main-text-color-transparent transparent transparent transparent;
+        animation: pendulum1 infinite 2s cubic-bezier(0.3, 1.65, 0.7, -0.65);
+    }
+
+    &:before {
+        border-color: $basic-shadow-color transparent transparent transparent;
+        animation-delay: -1.5s;
+        animation-name: pendulum2;
+    }
+}
+
+@keyframes pendulum1 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes pendulum2 {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(520deg);
+    }
+}

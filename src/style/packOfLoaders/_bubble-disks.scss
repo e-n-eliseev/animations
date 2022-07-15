@@ -1,0 +1,29 @@
+.pack-of-loaders{
+    &__bubble-disks {
+        position: relative;
+        width: 6em;
+        height: 6em;
+        transform: translateX(-50%);
+        &:before, &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            color: $main-text-color-transparent;
+            background-color: currentColor;
+                    animation: scaleCircles 2s infinite cubic-bezier(0.55, 0.15, 0.45, 0.85) alternate;
+          }
+          &:after {
+                    animation-delay: -1s;
+          }
+      }
+}
+@keyframes scaleCircles {
+    from {
+      transform: scale3d(0, 0, 0);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }

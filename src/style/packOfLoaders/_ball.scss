@@ -1,0 +1,60 @@
+.pack-of-loaders__ball {
+    width: 2em;
+    height: 2em;
+    border: 0.25em solid $main-text-color;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+            mask: radial-gradient(ellipse at center, $main-text-color-1, $main-text-color-2, $main-bg-color 20.1%, $main-bg-color 75%, $main-bg-color 100%);
+            animation: bounce 1.5s linear infinite;
+            &:before, &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                left: 0;
+                right: 0;
+                        animation: rotate 6s linear infinite;
+              }
+              &:before {
+                top: 0;
+                background-color: $project-bg-color;
+                transform-origin: center bottom;
+              }
+              &:after {
+                top: 50%;
+                background-color: $main-text-color-transparent;
+                transform-origin: center top;
+              }
+  }
+
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(2879deg);
+    }
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: scale(1, 1) translateY(-80%);
+    }
+    25% {
+      transform: scale(1, 1.1) translateY(-45%);
+    }
+    50% {
+      transform: scale(1, 1.5) translateY(10%);
+    }
+    66% {
+      transform: scale(2, 0.75) translateY(25%);
+    }
+    75% {
+      transform: scale(1, 1.25) translateY(10%);
+    }
+    100% {
+      transform: scale(1, 1) translateY(-80%);
+    }
+  }

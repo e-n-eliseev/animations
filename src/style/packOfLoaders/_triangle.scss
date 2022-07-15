@@ -1,0 +1,59 @@
+.pack-of-loaders__triangle,
+.pack-of-loaders__triangle:before,
+.pack-of-loaders__triangle:after{
+        background-size: 12em 2em;
+        width: 8em;
+        height: 2em;
+        background-color: $main-bg-color;
+        border: 3px solid $main-text-color-transparent;
+        font-size: $heading-size;
+}
+.pack-of-loaders__triangle {
+    line-height: 1.6;
+    color: $main-text-color;
+    transform-style: preserve-3d;
+    transform-origin: center center -2.25em;
+    animation: triRot 3s linear infinite reverse;
+    position: relative;
+      &:before, &:after {
+        position: absolute;
+        top:-6%;
+      }
+      &:before {
+        content: "wait…";
+        left: -105%;
+        transform-origin: right center;
+        transform: rotateY(-121deg);
+                animation-delay: -1s;
+      }
+      &:after {
+        content: "please";
+        right: -105%;
+        transform-origin: left center;
+        transform: rotateY(120deg);
+                animation-delay: -2s;
+      }
+  }
+
+  @keyframes triRot {
+    0% {
+      transform: rotateY(0deg);
+    }
+    33.3% {
+      transform: rotateY(120deg);
+    }
+    66.6% {
+      transform: rotateY(240deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  @keyframes reflex {
+    0% {
+      background-position-x: -4em;
+    }
+    100% {
+      background-position-x: -16em;
+    }
+  }

@@ -1,0 +1,41 @@
+@import "./packOfLoaders/wobble";
+@import "./packOfLoaders/bricks";
+@import "./packOfLoaders/drippy";
+@import "./packOfLoaders/bubble-disks";
+@import "./packOfLoaders/cycle-discs";
+@import "./packOfLoaders/progress-bar";
+@import "./packOfLoaders/bars";
+@import "./packOfLoaders/radar";
+@import "./packOfLoaders/beaker";
+@import "./packOfLoaders/spinna";
+@import "./packOfLoaders/pacman";
+@import "./packOfLoaders/pulsing";
+@import "./packOfLoaders/battery";
+@import "./packOfLoaders/vinyl";
+@import "./packOfLoaders/triangle";
+@import "./packOfLoaders/road";
+@import "./packOfLoaders/blow-up";
+@import "./packOfLoaders/pendulums";
+@import "./packOfLoaders/drip";
+@import "./packOfLoaders/dots";
+@import "./packOfLoaders/ball";
+@import "./packOfLoaders/figures";
+
+.pack-of-loaders {
+    font-size: $heading-size;
+    &__wrapper {
+        @extend %flex;
+        flex-wrap: wrap;
+        color: $main-text-color;
+    }
+
+    &__loader {
+        cursor: wait;
+        @extend %flex;
+        position: relative;
+        &--perspective{
+            perspective: 600px;
+        }
+    }
+
+}

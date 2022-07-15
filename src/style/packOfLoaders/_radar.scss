@@ -1,0 +1,75 @@
+.pack-of-loaders {
+    &__radar {
+        position: relative;
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid $main-text-color;
+        background-color: $main-text-color-transparent;
+        background-image: repeating-radial-gradient(transparent 0, transparent 0.39em, $main-text-color-transparent 0.45em, $main-text-color-transparent 0.5em);
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+        }
+
+        &:before {
+            width: 4em;
+            height: 3em;
+            top: 50%;
+            transform-origin: left top;
+            border-left: 0.1em solid $main-bg-color;
+            background-image: linear-gradient(to right, $main-bg-color 0%, transparent 85%);
+            animation: radar 2s infinite linear;
+        }
+
+        &:after {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: currentColor;
+            animation: radarDotGlow 2s infinite linear, radarDotMove 15s infinite cubic-bezier(0.5, -0.35, 0.5, 1.35);
+        }
+    }
+}
+
+@keyframes radar {
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes radarDotGlow {
+
+    0%,
+    59.9%,
+    87%,
+    100% {
+        color: $main-bg-color;
+        box-shadow: 0 0 0.1em 0.05em currentColor;
+    }
+
+    62% {
+        color: $main-bg-color + 50;
+        box-shadow: 0 0 0.1em 0.1em currentColor;
+    }
+}
+
+@keyframes radarDotMove {
+    0% {
+        top: 0%;
+        left: 85%;
+    }
+
+    40% {
+        top: 30%;
+        left: 70%;
+    }
+
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}

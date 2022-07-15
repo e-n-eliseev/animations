@@ -1,0 +1,79 @@
+.pack-of-loaders{
+    &__drippy {
+        position: relative;
+        width: 3em;
+        height: 3em;
+        border-radius: 50% 0 50% 50%;
+        top: -40px;
+        transform: rotate(135deg);
+        box-shadow: 0 0 0 0.15em $project-bg-color, 0 0 0 0.25em $main-text-color+25, -1px -1px 10px 5px $basic-shadow-color;
+        &:before {
+            content: "";
+            position: absolute;
+            border-radius: 50% 0 50% 50%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: repeating-linear-gradient(45deg, $main-text-color+50 0, $main-text-color 12px, transparent 1px, transparent 19px);
+                    animation: loaderZoom 2s cubic-bezier(0.8, 0.1, 0.3, 0.8) infinite;
+          }
+          &:after {
+            content: "";
+            width: $heading-size;
+            height: $heading-size;
+             position: absolute;
+             z-index: -2;
+            border-radius: 50%;
+            background-color: $main-text-color;
+                    animation: loaderDrip 2s cubic-bezier(0.5, 0.8, 0.5, 0.2) infinite forwards;
+                    box-shadow: inset -2px -2px 1px $project-bg-color, -1px -3px 1px $main-bg-color;
+          }
+      }
+}
+ 
+  @keyframes loaderZoom {
+    from {
+      background-size: 152% 152%;
+    }
+    to {
+      background-size: 115% 115%;
+    }
+  }
+  @keyframes loaderDrip {
+    0% {
+      bottom: 105%;
+      left: 105%;
+      width: 0.1em;
+      height: 0.1em;
+      border-radius: 3em 3em 3em 3em;
+      opacity: 1;
+    }
+    70% {
+      bottom: 120%;
+      left: 120%;
+      width: 1em;
+      height: 1em;
+      border-radius: 6em 6em 6em 0;
+      opacity: 1;
+    }
+    80% {
+      bottom: 130%;
+      left: 130%;
+      border-radius: 3em 6em;
+      opacity: 1;
+    }
+    94% {
+      bottom: 150%;
+      left: 150%;
+      border-radius: 2em 6em;
+      opacity: 1;
+    }
+    100% {
+      bottom: 150%;
+      left: 150%;
+      border-radius: 0.5em 6em;
+      opacity: 0;
+    }
+  }

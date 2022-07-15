@@ -1,0 +1,61 @@
+.pack-of-loaders__blow-up {
+    width: 3em;
+    height: 3em;
+    position: relative;
+    &::after,&::before{
+        content: "";
+        position: absolute;
+    }
+    &:before {
+        left: 0.75em;
+        top: 0.75em;
+        border-radius: 50%;
+        background-color: $main-text-color;
+        width: 1.5em;
+        height: 1.5em;
+                animation: blow-grow 4s infinite cubic-bezier(.45,-0.43,.63,1.94);
+      }
+      &:after {
+        top: 50%;
+        left: 50%;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+                animation: blow-fade-in 1s infinite cubic-bezier(.45,-0.43,.63,1.94), blow-shadow 1s infinite cubic-bezier(.45,-0.43,.63,1.94);
+      }
+  }
+ 
+  @keyframes blow-fade-in {
+    0% {
+      opacity: 0;
+    }
+    2%, 100% {
+      opacity: 1;
+    }
+  }
+  @keyframes blow-shadow {
+    0% {
+      box-shadow: -4em 0 0 0.015em $main-text-color-transparent, 4em 0 0 0.015em $main-text-color-transparent;
+    }
+    75%, 100% {
+      box-shadow: 0 0 0 0.4em $main-text-color-transparent, 0 0 0 0.4em $main-text-color-transparent;
+    }
+  }
+  @keyframes blow-grow {
+    0% {
+      transform: scale(0);
+          }
+    25% {
+      transform: scale(0.5);
+          }
+    50% {
+      transform: scale(1);
+          }
+    75% {
+      transform: scale(1.5);
+          }
+    100% {
+      transform: scale(2);
+          }
+  }

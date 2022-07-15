@@ -1,0 +1,52 @@
+.pack-of-loaders__battery {
+    width: 2em;
+    height: 5em;
+    border: 0.2em solid;
+    border-radius: 0.25em;
+    position: relative;
+    color: $main-text-color;
+            animation: batteryColor 10s linear infinite;
+            
+  &:before, &:after {
+    content: "";
+    position: absolute;
+  }
+  &:before {
+    mix-blend-mode:difference;
+    content: "+\a\a\a-";
+    white-space: pre;
+    padding-top: 0.1em;
+    line-height: 1.15em;
+    font-weight: 900;
+    border: 0.1em solid;
+    border-width: 0.2em 0 0 0;
+    width: 1em;
+    left: 50%;
+    top: -0.45em;
+    z-index: 4;
+    border-radius: 0.1em 0.1em 0 0;
+    transform: translateX(-50%);
+  }
+  &:after {
+    top: 0.2em;
+    left: 0.2em;
+    right: 0.2em;
+    bottom: 0.2em;
+            animation: batteryFill 10s linear infinite;
+  }
+  }
+
+
+  @keyframes batteryFill {
+    to {
+      box-shadow: inset 0 -4.5em 0;
+    }
+  }
+  @keyframes batteryColor {
+    96.5% {
+      color: $main-text-color;
+    }
+    97%, 99% {
+      color: $main-text-color-transparent;
+    }
+  }

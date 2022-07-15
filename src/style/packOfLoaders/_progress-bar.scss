@@ -1,0 +1,44 @@
+.pack-of-loaders {
+    &__progress-bar {
+        width: 8em;
+        height: 1.5em;
+        border-radius: 0.5em;
+        border: 0.125em solid;
+        color: $main-text-color;
+        position: relative;
+        &:before,
+        &:after {
+            content: "";
+            top: 0.2em;
+            left:  0.2em;
+            right:  0.2em;
+            bottom:  0.2em;
+            border-radius: 0.25em;
+            position: absolute;
+        }
+
+        &:after {
+            right: 100%;
+            animation: loaderBarInfinite 10s infinite linear, loaderBarScroll 10s infinite linear;
+            box-shadow:  1px 1px 1px $basic-shadow-color + 80;
+            background-image: repeating-linear-gradient(45deg, $main-text-color-transparent 0px, $main-text-color-transparent 4px, $main-text-color 5px, $main-text-color 9px);
+            background-size: 26px 13px;
+        }
+    }
+}
+
+@keyframes loaderBarInfinite {
+    from {
+        background-position: 104px 0;
+    }
+
+    to {
+        background-position: -104px 0;
+    }
+}
+
+@keyframes loaderBarScroll {
+    to {
+        right: 2%;
+    }
+}
