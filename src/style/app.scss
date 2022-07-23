@@ -12,15 +12,22 @@
 @import "./pack-of-loaders";
 @import "./broken-photo";
 
-.app{
+.app {
     display: grid;
     min-height: 100vh;
     background-color: $main-bg-color;
-    grid-template: 1fr/1fr minmax(auto,$display-size) 1fr;
-    &__wrapper{
+    grid-template: 1fr/1fr minmax(auto, $display-size) 1fr;
+
+    &__wrapper {
         grid-column: 2/3;
         padding: 10px;
         @extend %flex;
         flex-direction: column;
+    }
+
+    &__loading {
+        width: 200px;
+        height: 200px;
+        background: url("../assets/Gear.svg");
     }
 }

@@ -8,14 +8,13 @@ import {
   Route,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import BrokenPhoto from "./components/brokenPhoto/BrokenPhoto";
+const BrokenPhoto = lazy(() => import("./components/brokenPhoto/BrokenPhoto"));
 const PackOfLoaders = lazy(() => import("./components/packOfLoaders/PackOfLoaders"));
 const TypeWriter = lazy(() => import("./components/typeWriter/TypeWriter"));
 const TextStyles = lazy(() => import("./components/textStyles/TextStyles"));
 const Parallax = lazy(() => import("./components/parallax/Parallax"));
 const BgPicAnimation = lazy(() => import("./components/bgpicanimation/BgPicAnimation"));
 const PageNotFound = lazy(() => import("./components/404/PageNotFound"));
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +22,7 @@ function App() {
         <div className="app__wrapper">
           <Header />
           <Suspense
-            fallback={<h1>Loading profile...</h1>}
+            fallback={<div className="app__loading"></div>}
           >
             <Routes>
               <Route path="/" element={<Main />} >
