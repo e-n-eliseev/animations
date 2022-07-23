@@ -1,14 +1,18 @@
-.parallax,.bg-pic-anim {
+.parallax,.bg-pic-anim,.broken-photo {
     flex-grow: 1;
     @extend %flex;
     flex-direction: column;
 &__wrapper{
     position: relative;
-    overflow: hidden;
     flex-grow: 1;
     width: 100%;
     border-radius: $heading-size;
     margin-top: 25px;
+}
+}
+.parallax,.bg-pic-anim {
+&__wrapper{
+    overflow: hidden;
 }
 &__bg1,&__bg2,&__bg3 {
     position: absolute;

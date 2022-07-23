@@ -17,6 +17,7 @@ const Main = memo(() => {
 
     useEffect(() => {
         if (!currentPage || currentPage > pages) navigate(`/page1`);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const [page, setPage] = useState(currentPage ? currentPage : 1);

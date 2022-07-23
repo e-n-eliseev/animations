@@ -1,0 +1,52 @@
+.broken-photo {
+    position: relative;
+    & span {
+        position: absolute;
+        inset: 0;
+        transition: 0.5s;
+        background: url("../assets/parallax/bg-1.jpg");
+        background-size: cover;
+        border-radius: $heading-size;
+        &:nth-child(1) {
+            -webkit-clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+            clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+            transition-delay: 0s;
+        }
+        
+        &:nth-child(2) {
+            -webkit-clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+            clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+            transition-delay: 0.25s;
+        }
+        
+        &:nth-child(3) {
+            -webkit-clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+            clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+            transition-delay: 0.5s;
+        }
+        
+        &:nth-child(4) {
+            -webkit-clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+            clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+            transition-delay: 0.75s;
+        }
+    }
+    &:hover{
+        & span{
+            &:nth-child(1){
+                transform: translate(40px, 60px) rotate(-25deg);
+            }
+            &:nth-child(2){
+                transform: translate(-140px, 100px) rotate(25deg);
+            }
+            &:nth-child(3){
+                transform: translate(140px, -180px) rotate(35deg);
+            }
+            &:nth-child(4){
+                transform: translate(-140px, -80px) rotate(-45deg);
+            }
+        }
+    }
+
+}
+

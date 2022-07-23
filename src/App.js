@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import BrokenPhoto from "./components/brokenPhoto/BrokenPhoto";
 const PackOfLoaders = lazy(() => import("./components/packOfLoaders/PackOfLoaders"));
 const TypeWriter = lazy(() => import("./components/typeWriter/TypeWriter"));
 const TextStyles = lazy(() => import("./components/textStyles/TextStyles"));
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/page:id" element={<Main />} />
               </Route>
               <Route path="/parallax" element={<Parallax />} />
+              <Route path="/brokenphoto" element={<BrokenPhoto />} />
               <Route path="/backgroundpictureanimation" element={<BgPicAnimation />} />
               <Route path="/textstyle" element={<TextStyles />} />
               <Route path="/typewriter" element={<TypeWriter />} />
