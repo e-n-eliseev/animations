@@ -26,8 +26,12 @@
     }
 
     &__loading {
-        width: 200px;
-        height: 200px;
-        background: url("../assets/Gear.svg");
+        @extend %flex;
+        min-height: 100vh;
+        & div{
+            width: 200px;
+            height: 200px;
+            background: url("../assets/Gear.svg");
+        }
     }
 }

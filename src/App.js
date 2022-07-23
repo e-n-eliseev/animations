@@ -22,7 +22,7 @@ function App() {
         <div className="app__wrapper">
           <Header />
           <Suspense
-            fallback={<div className="app__loading"></div>}
+            fallback={<div className="app__loading"><div></div></div>}
           >
             <Routes>
               <Route path="/" element={<Main />} >
